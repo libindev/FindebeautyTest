@@ -1,4 +1,4 @@
-package com.libin.findebeauty.presentation.ui
+package com.libin.findebeauty.presentation.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
