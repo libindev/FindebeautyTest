@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">FindebeautyTest</string>
-
+    <string name="home_fragment_label">Home</string>
     <string name="previous">Previous</string>
     <string name="greenwich">Greenwich</string>
     <string name="top_techs">Top Techs</string>
@@ -18,4 +18,5 @@
     <string name="down_arrow">down arrow</string>
     <string name="top_tech_image">top tech image</string>
     <string name="image_tic">image tic</string>
+
 </resources>
