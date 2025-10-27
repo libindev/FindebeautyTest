@@ -6,9 +6,21 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -67,7 +79,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/banners_recycler_view" />
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/top_services_recycler_view"
                 android:layout_width="0dp"
@@ -81,7 +92,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/top_services_title" />
-
 
             <TextView
                 android:id="@+id/trending_salons_title"
@@ -102,7 +112,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/trending_salons_title" />
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/trending_salons_recycler_view"
                 android:layout_width="0dp"
@@ -117,7 +126,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trending_salons_title" />
 
-
             <TextView
                 android:id="@+id/top_techs_title"
                 style="@style/SectionTitle"
@@ -126,7 +134,6 @@
                 android:text="@string/top_techs"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trending_salons_recycler_view" />
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/top_techs_recycler_view"
@@ -141,7 +148,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/top_techs_title" />
-
 
             <TextView
                 android:id="@+id/nearby_salons_title"

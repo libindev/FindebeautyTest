@@ -54,7 +54,6 @@ class LoginFragment : Fragment() {
                 }
 
                 is Resource.Success -> {
-                    Toast.makeText(context, "Token saved!", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_loginFragment_to_HomeFragment)
                 }
 

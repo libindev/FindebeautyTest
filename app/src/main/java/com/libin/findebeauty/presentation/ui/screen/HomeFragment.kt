@@ -105,11 +105,13 @@ class HomeFragment : Fragment() {
         viewModel.homeData.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
-                    // Show a loading indicator
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.nestedScrollView.visibility = View.GONE
                 }
-
                 is Resource.Success -> {
                     resource.data?.let {
+                        binding.progressBar.visibility = View.GONE
+                        binding.nestedScrollView.visibility = View.VISIBLE
                         bannersAdapter.submitList(listOf(it.homePageBanner))
                         topServicesAdapter.submitList(it.topServices)
                         topTechsAdapter.submitList(it.topTechs)
