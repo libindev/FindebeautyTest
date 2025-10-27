@@ -5,7 +5,15 @@ This is an Android application that helps users find beauty products and service
 ## Features
 
 - View a home screen with a list of beauty products or services.
+- Location-based search using latitude and longitude.
+- Filter by city.
 - A dummy login feature to demonstrate secure token storage.
+
+## Screenshots
+
+**Home Screen**
+
+![Home Screen](<screenshot/home_screen.png>)
 
 ## Libraries Used
 
