@@ -23,11 +23,19 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "API_BASE_URL", "\"https://findebeautyapi.com/api/\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://findebeautyapi.com\"")
+        }
+        debug {
+            buildConfigField("String", "API_BASE_URL", "\"https://findebeautyapi.com/api/\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://findebeautyapi.com\"")
+            applicationIdSuffix = ".debug"
+            isMinifyEnabled = false
         }
     }
     compileOptions {
