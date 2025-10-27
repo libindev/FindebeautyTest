@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topTech"
+            type="com.libin.findebeauty.domain.model.TopTech" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="2dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/tech_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/top_tech_image"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tech_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_inter"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{topTech.empName}"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+            tools:text="Tata Abdullah" />
+
+        <ImageView
+            android:id="@+id/tech_tic"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/image_tic"
+            android:elevation="3dp"
+            android:src="@drawable/ic_tic"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

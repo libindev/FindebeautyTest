@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/location_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/location"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#E91E63" />
+
+    <TextView
+        android:id="@+id/location_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/font_inter"
+        android:text="@string/greenwich"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/location_icon"
+        app:layout_constraintStart_toEndOf="@id/location_icon"
+        app:layout_constraintTop_toTopOf="@id/location_icon" />
+
+    <ImageView
+        android:id="@+id/location_dropdown_arrow"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/down_arrow"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@id/location_name"
+        app:layout_constraintStart_toEndOf="@id/location_name"
+        app:layout_constraintTop_toTopOf="@id/location_name" />
+
+    <TextView
+        android:id="@+id/location_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/font_inter"
+        android:text="@string/se3_8hf_greenwich_london"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/location_icon"
+        app:layout_constraintTop_toBottomOf="@id/location_name" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/filter_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_address"
+        app:strokeColor="#DDD"
+        app:strokeWidth="1dp">
+
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/search_for_salon"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/font_inter"
+            android:hint="@string/search_for_salon"
+            android:inputType="text"
+            android:padding="12dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/filter_card"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/search_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_card"
+        app:strokeColor="#DDD"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/filter_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/language_filter"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_english_arabic" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

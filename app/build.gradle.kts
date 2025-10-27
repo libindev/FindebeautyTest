@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -21,11 +23,19 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "API_BASE_URL", "\"https://findebeautyapi.com/api/\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://findebeautyapi.com\"")
+        }
+        debug {
+            buildConfigField("String", "API_BASE_URL", "\"https://findebeautyapi.com/api/\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://findebeautyapi.com\"")
+            applicationIdSuffix = ".debug"
+            isMinifyEnabled = false
         }
     }
     compileOptions {
@@ -35,6 +45,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -43,6 +59,33 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+
+    // Hilt for Dependency Injection
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    // Retrofit for Networking
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
+    // Coroutines for Asynchronous Programming
+    implementation(libs.kotlinx.coroutines.android)
+
+    // ViewModel and LiveData
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.activity.ktx) // for by viewModels()
+
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // Coil for Image Loading
+    implementation(libs.coil)
+
+    // DataStore for Preferences
+    implementation(libs.androidx.datastore.preferences)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

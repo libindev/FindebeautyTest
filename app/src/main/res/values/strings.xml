@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">FindebeautyTest</string>
+    <string name="home_fragment_label">Home</string>
+    <string name="previous">Previous</string>
+    <string name="greenwich">Greenwich</string>
+    <string name="top_techs">Top Techs</string>
+    <string name="nearby_salons">Nearby Salons</string>
+    <string name="view_all">View all</string>
+    <string name="trending_salons">Trending Salons</string>
+    <string name="top_services">Top Services</string>
+    <string name="search_for_salon">Search for \'Salon\'</string>
+    <string name="greenwich_address">green</string>
+    <string name="image">image</string>
+    <string name="action_icon">action icon</string>
+    <string name="location">Location</string>
+    <string name="se3_8hf_greenwich_london">SE3 8HF Greenwich London</string>
+    <string name="language_filter">language filter</string>
+    <string name="down_arrow">down arrow</string>
+    <string name="top_tech_image">top tech image</string>
+    <string name="image_tic">image tic</string>
+
 </resources>
