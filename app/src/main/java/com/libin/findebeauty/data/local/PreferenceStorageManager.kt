@@ -10,11 +10,8 @@ import com.libin.findebeauty.core.CryptoManager
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import java.util.* 
+import java.util.Base64
 import javax.inject.Inject
-import kotlin.let
-import kotlin.text.decodeToString
-import kotlin.text.toByteArray
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
