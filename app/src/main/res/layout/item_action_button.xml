@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="actionButton"
+            type="com.libin.findebeauty.domain.model.ActionButton" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@{actionButton.color}"
+        app:cardCornerRadius="12dp"
+        app:strokeColor="@{actionButton.color}"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:id="@+id/action_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/action_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/action_icon" />
+
+            <TextView
+                android:id="@+id/action_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/font_inter"
+                android:text="@{actionButton.text}"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
