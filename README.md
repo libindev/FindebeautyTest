@@ -13,7 +13,21 @@ This is an Android application that helps users find beauty products and service
 
 **Home Screen**
 
-![Home Screen](<screenshot/home_screen.png>)
+![Home Screen](screenshots/home_screen.png)
+
+## How to Run
+
+1. **Clone the repository.**
+2. **Open in Android Studio:** Open the cloned project in Android Studio.
+3. **Add your Dummy Token:**
+    * Navigate to the
+      `app/src/main/java/com/libin/findebeauty/presentation/ui/screen/LoginFragment.kt` file.
+    * Find the `DUMMY_TOKEN` constant inside the `companion object`.
+    * Paste your API token into the empty string for the `DUMMY_TOKEN` constant.
+      ```kotlin
+      private const val DUMMY_TOKEN = "PASTE_YOUR_TOKEN_HERE"
+      ```
+4. **Build and Run:** Build and run the application on an emulator or a physical device.
 
 ## Libraries Used
 
