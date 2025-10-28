@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.libin.findebeauty.R
 import com.libin.findebeauty.core.Resource
@@ -22,6 +23,10 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
+    private companion object {
+        private const val DUMMY_TOKEN = "" //PASTE YOUR TOKEN HERE
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +39,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.saveTokenButton.setOnClickListener {
-            val token =
-                "5zvql-wdk3APxb5uuWOZJcxHDEjnwzc78ex288SFAMm1Pg-CFm9w9kTAx3m6ZCv02lLm7RkgMidXL-mT8q9xsE_wLP1RbDz4hOt8DSMCC187MaJIzH-KO02EFoqhcZ_hcMY273X7HC1CBcFNCVencasSyNT9SY38C3o4vm4XIgN0ceAMQAG9YbnT0xiep_IhKQyXBZeQNlXX7xy8CVQXTPZgxYEMEBhu7QQd-k95yzTBtCsg5Ax7OvZ9kQiKIrJ69Ll7CPuewEm8dMBZknGZeXHCrDoOKzB2Z8vkTF4Fq-PTRiNDo9rnQmeWjTvhBTEnCRAZkF0n6T44L7HyDoyysj4iD5V9lAgSy2PORviKn7W1KxPNlcm3sOK5vFa2UV5QIXmusPtXlMGnczHd8cbPg4skqgcMMk_Sja-as3OMLeZtbxwBVkaTGPh9RckXw-uK"
-            if (token.isNotEmpty()) {
-                viewModel.saveToken(token)
+            if (DUMMY_TOKEN.isNotEmpty()) {
+                viewModel.saveToken(DUMMY_TOKEN)
 
             } else {
                 Toast.makeText(context, "Please enter a token", Toast.LENGTH_SHORT).show()
@@ -54,10 +57,19 @@ class LoginFragment : Fragment() {
                 }
 
                 is Resource.Success -> {
-                    findNavController().navigate(R.id.action_loginFragment_to_HomeFragment)
+                    binding.saveTokenButton.isEnabled = true
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.loginFragment, true)
+                        .build()
+                    findNavController().navigate(
+                        R.id.action_loginFragment_to_HomeFragment,
+                        null,
+                        navOptions
+                    )
                 }
 
                 is Resource.Error -> {
+                    binding.saveTokenButton.isEnabled = true
                     Toast.makeText(context, resource.message, Toast.LENGTH_LONG).show()
                 }
             }

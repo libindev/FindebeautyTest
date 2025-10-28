@@ -121,6 +121,7 @@ class HomeFragment : Fragment() {
                 }
 
                 is Resource.Error -> {
+                    binding.progressBar.visibility = View.GONE
                     Toast.makeText(context, resource.message, Toast.LENGTH_LONG).show()
                 }
             }

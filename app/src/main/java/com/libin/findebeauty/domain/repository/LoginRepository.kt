@@ -1,8 +1,9 @@
 package com.libin.findebeauty.domain.repository
 
 import com.libin.findebeauty.core.Resource
+import kotlinx.coroutines.flow.Flow
 
 
 interface LoginRepository {
-    suspend fun saveToken(token: String): Resource<Unit>
+    fun saveToken(token: String): Flow<Resource<Unit>>
 }
