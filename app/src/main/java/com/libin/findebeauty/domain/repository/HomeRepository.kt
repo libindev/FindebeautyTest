@@ -2,14 +2,15 @@ package com.libin.findebeauty.domain.repository
 
 import com.libin.findebeauty.core.Resource
 import com.libin.findebeauty.domain.model.Home
+import kotlinx.coroutines.flow.Flow
 
 
 interface HomeRepository {
-    suspend fun getHomePageData(
+    fun getHomePageData(
         lat: Double,
         logt: Double,
         lang: String,
         cityId: Int,
         all: Int
-    ): Resource<Home>
+    ): Flow<Resource<Home>>
 }
