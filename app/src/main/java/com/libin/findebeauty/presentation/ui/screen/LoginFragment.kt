@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.libin.findebeauty.R
 import com.libin.findebeauty.core.Resource
@@ -54,10 +55,19 @@ class LoginFragment : Fragment() {
                 }
 
                 is Resource.Success -> {
-                    findNavController().navigate(R.id.action_loginFragment_to_HomeFragment)
+                    binding.saveTokenButton.isEnabled = true
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.loginFragment, true)
+                        .build()
+                    findNavController().navigate(
+                        R.id.action_loginFragment_to_HomeFragment,
+                        null,
+                        navOptions
+                    )
                 }
 
                 is Resource.Error -> {
+                    binding.saveTokenButton.isEnabled = true
                     Toast.makeText(context, resource.message, Toast.LENGTH_LONG).show()
                 }
             }
